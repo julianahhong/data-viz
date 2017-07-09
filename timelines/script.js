@@ -20,6 +20,8 @@ var fileInput = document.getElementById("upload1"),
 
         };
         // start reading the file. When it is done, calls the onload event defined above.
+                console.log(fileInput);
+        console.log(fileInput.files[0]);
         reader.readAsBinaryString(fileInput.files[0]);
     };
 
@@ -105,6 +107,8 @@ var fileInput4 = document.getElementById("upload4"),
     };
 
 fileInput4.addEventListener('change', readFile);
+
+
 function convertArray(listOne){
     var graphOne = new Array(listOne.length);
     for (var i=0; i<listOne.length; i++){
@@ -139,7 +143,7 @@ function displayGraphs(graphOneData, graphName){
             plotBackgroundColor: chartColor,
             type: 'scatter',
             zoomType: 'xy',
-            height: '10%'
+            height: '9%'
         },
         title: {
             text: titleText[graphName],
