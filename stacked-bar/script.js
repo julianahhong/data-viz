@@ -1,7 +1,30 @@
+/*
 var data = "Categories,Student Talk,Silence,Teacher Talk, 1499351512947,24,13,63";
 var dataArray = data.split(',');
 console.log(dataArray);
+*/
+var fileInput = document.getElementById("upload1"),
+    readFile1 = function () {
+        var reader = new FileReader();
+        reader.onload = function () {
 
+            var listOneArray = [];
+            var data = reader.result;
+            var dataArray = data.split('\n');
+
+            //convert string numbers to ints
+            for (var k=0; k<dataArray.length; k++){
+                dataArray[k] = Number(dataArray[k]);
+            }
+            console.log(dataArray);
+            showChart(dataArray);
+        };
+        reader.readAsBinaryString(fileInput.files[0]);
+    };
+
+fileInput.addEventListener('change', readFile1);
+
+function showChart(dataArr){
     Highcharts.chart('container', {
         chart: {
             type: 'column'
@@ -16,7 +39,7 @@ console.log(dataArray);
                 text: 'Class Dates'
             },
             // INPUT CLASS DATES HERE
-            categories: dataArray[4]
+            categories: ['Student Talk', 'Silence', 'Teacher Talk']
         },
         yAxis: {
             min: 0,
@@ -65,13 +88,14 @@ console.log(dataArray);
         // CLASS N: INDEX (N-1) IN LIST
         series: [{
             name: 'Student Talk',
-            data: [Number(dataArray[5])]
+            data: [Number(dataArr[0])]
         }, {
             name: 'Silence',
-            data: [Number(dataArray[6])]
+            data: [Number(dataArr[1])]
         }, {
             name: 'Teacher Talk',
-            data: [Number(dataArray[7])]
+            data: [Number(dataArr[2])]
         }]
       
     });
+}
