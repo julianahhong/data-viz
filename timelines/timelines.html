@@ -1,13 +1,17 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+<!DOCTYPE html>
+<head>
+      <link rel="stylesheet" href="timeline-style.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+</head>
 
-<p>Select local CSV File:</p>
-Answered Content: <input id="upload1" type="file">
-Unanswered Content: <input id="upload2" type="file">
-Answered Non-Content: <input id="upload3" type="file">
-Unanswered Non-Content: <input id="upload4" type="file">
+<p>Upload local CSV Files:</p>
+<strong>Answered Content: </strong><br> <input id="upload1" type="file"><br>
+<strong>Unanswered Content: </strong><br><input id="upload2" type="file"><br>
+<strong>Answered Non-Content: </strong><br><input id="upload3" type="file"><br>
+<strong>Unanswered Non-Content: </strong><br><input id="upload4" type="file"><br>
 
 <output id="out1">
 </output>
@@ -253,3 +257,4 @@ function displayGraphs(graphOneData, graphName){
 }
 
 </script>
+</html>
