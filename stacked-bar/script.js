@@ -36,10 +36,14 @@ function showChart(dataArr){
         },
         xAxis: {
             title: {
-                text: 'Class Dates'
+                text: 'May 26, 2019'
             },
             // INPUT CLASS DATES HERE
-            categories: ['Student Talk', 'Silence', 'Teacher Talk']
+            categories: ['Student Talk', 'Silence', 'Teacher Talk'],
+            labels: {
+                enabled: false,
+                format: null
+            }
         },
         yAxis: {
             min: 0,
