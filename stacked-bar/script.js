@@ -85,8 +85,12 @@ function showChart(dataArr){
                     enabled: true,
                     color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
                 }
+            },
+            series: {
+                pointWidth: 90
             }
-        },  // INPUT TALK PERCENTAGES HERE
+        },  
+        // INPUT TALK PERCENTAGES HERE
         // CLASS 1: INDEX 0 IN LIST
         // CLASS 2: INDEX 1 IN LIST
         // CLASS N: INDEX (N-1) IN LIST
